@@ -17,6 +17,10 @@ for (let button of buttons) {
 
 for (let operator of operators) {
     operator.onclick=function() {
+        if (calculation.innerText.includes("=")) {
+            calculation.innerText = output.innerText;
+            output.innerText;
+        }
     result += output.innerText + operator.value;
     calculation.innerText += operator.value;
     output.innerText="";
@@ -46,21 +50,33 @@ document.getElementById("clearAll").onclick=function(){
 };
 
 document.getElementById("racine").onclick=function(){
+    if (calculation.innerText.includes("=")) {
+        calculation.innerText = output.innerText;
+    }
     calculation.innerText = calculation.innerText.substr(0, calculation.innerText.length-output.innerText.length) + output.innerText.replace(output.innerText, "√"+output.innerText);
     output.innerText = output.innerText.replace(output.innerText, Math.sqrt(output.innerText));
 };
 
 document.getElementById("negatif").onclick=function(){
+    if (calculation.innerText.includes("=")) {
+        calculation.innerText = output.innerText;
+    }
     calculation.innerText = calculation.innerText.substr(0, calculation.innerText.length-output.innerText.length) + output.innerText.replace(output.innerText, "-"+output.innerText);
     output.innerText = output.innerText.replace(output.innerText, -1*(output.innerText));
 };
 
 document.getElementById("carré").onclick=function(){
+    if (calculation.innerText.includes("=")) {
+        calculation.innerText = output.innerText;
+    }
     calculation.innerText = calculation.innerText.substr(0, calculation.innerText.length-output.innerText.length) + output.innerText+"^2";
     output.innerText = output.innerText*output.innerText;
 };
 
 document.getElementById("1/x").onclick=function(){
+    if (calculation.innerText.includes("=")) {
+        calculation.innerText = output.innerText;
+    }
     calculation.innerText = calculation.innerText.substr(0, calculation.innerText.length-output.innerText.length) + "1/("+output.innerText+")";
     output.innerText = 1/output.innerText;
 };
