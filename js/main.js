@@ -24,6 +24,7 @@ for (let operator of operators) {
     result += output.innerText + operator.value;
     calculation.innerText += operator.value;
     output.innerText="";
+    console.log(result + " " + result.innerText);
     }
 };
 
@@ -34,6 +35,10 @@ document.getElementById("submit").onclick=function(){
 };
 
 document.getElementById("delete").onclick=function(){
+    if (result.endsWith("-" || "+")) {
+        result = result.substr(0, result.length-1);
+    }
+    console.log(result + " " + result.innerText);
     calculation.innerText = calculation.innerText.substring(0, calculation.innerText.length-1)
     output.innerText = output.innerText.substring(0, output.innerText.length-1);
 };
