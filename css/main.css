@@ -111,6 +111,9 @@ textarea {
   background-color: rgb(112, 112, 112);
   font-size: 0.6rem;
 }
+.oneTime {
+  pointer-events: none;
+}
 
 /* ==========================================================================
    Helper classes
